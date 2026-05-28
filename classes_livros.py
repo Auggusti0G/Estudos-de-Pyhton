@@ -1,6 +1,11 @@
+#----------------------------------------
+#------Estudo de classes livraria--------
+#----------------------------------------
+
+#Desenvolvimento da Primeira classe
 class Livro:
     """Classe que representa um livro individual."""
-    def __init__(self, titulo, autor):
+    def __init__(self, titulo, autor):   #Metado conctutor para colocar os atributos
         self.titulo = titulo
         self.autor = autor
         self.disponivel = True
