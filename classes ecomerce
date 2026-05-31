@@ -1,0 +1,63 @@
+from typing import List
+
+class Produto:
+    """Representa um item que pode ser comprado."""
+    def __init__(self, nome: str, preco: float):
+        self.nome: str = nome
+        self.preco: float = preco
+
+    def exibir_detalhes(self) -> str:
+        return f"{self.nome} - R$ {self.preco:.2f}"
+
+
+class CarrinhoDeCompras:
+    """Gerencia uma lista de objetos da classe Produto."""
+    def __init__(self):
+        # Inicializando uma lista vazia para guardar os objetos 'Produto'
+        self.itens: List[Produto] = []
+
+    def adicionar_produto(self, produto: Produto) -> None:
+        """Adiciona um objeto Produto à lista do carrinho."""
+        self.itens.append(produto)
+        print(f"🛒 {produto.nome} adicionado ao carrinho.")
+
+    def exibir_resumo(self) -> None:
+        """Usa um loop 'for' para varrer a lista e exibir os produtos."""
+        if not self.itens:
+            print("Seu carrinho está vazio.")
+            return
+
+        print("\n--- RESUMO DO SEU CARRINHO ---")
+        # Loop 'for' percorrendo a lista de objetos
+        for produto in self.itens:
+            print(f" • {produto.exibir_detalhes()}")
+        print("-------------------------------")
+
+    def calcular_total(self) -> float:
+        """Soma o preço de todos os produtos presentes na lista."""
+        total = 0.0
+        for produto in self.itens:
+            total += produto.preco
+        return total
+
+
+# --- TESTANDO O CÓDIGO ---
+if __name__ == "__main__":
+    # 1. Instanciando os produtos
+    p1 = Produto("Teclado Mecânico", 250.00)
+    p2 = Produto("Mouse Gamer", 120.50)
+    p3 = Produto("Mousepad Extra Grande", 60.00)
+
+    # 2. Criando o carrinho de compras
+    meu_carrinho = CarrinhoDeCompras()
+
+    # 3. Adicionando os produtos à lista do carrinho
+    meu_carrinho.adicionar_produto(p1)
+    meu_carrinho.adicionar_produto(p2)
+    meu_carrinho.adicionar_produto(p3)
+
+    # 4. Exibindo o resumo e o valor total
+    meu_carrinho.exibir_resumo()
+    valor_final = meu_carrinho.calcular_total()
+    
+    print(f"💰 Valor total da compra: R$ {valor_final:.2f}\n")
