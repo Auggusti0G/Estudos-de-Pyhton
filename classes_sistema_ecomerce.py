@@ -8,7 +8,7 @@ class Produto:
     def __str__(self):
         return f"{self.nome} (R$ {self.preco:.2f})"
 
-#Descrevendo a area de item de carrinho
+
 class ItemCarrinho:
     """Classe intermediária que une o Produto à Quantidade escolhida."""
     def __init__(self, produto, quantidade):
