@@ -2,7 +2,7 @@
 #-------Conceitos basicos Programação------
 #------------------------------------------
 
-#como eu faço para printar algo ?
+#como eu faço para printar algo ultilizando a linguagem pyhton?
 
 #No python ultilizamos o print
 print("hello world")
