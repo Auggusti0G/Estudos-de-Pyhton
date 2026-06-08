@@ -1,7 +1,7 @@
 #------------------------------------------
 #-------Conceitos basicos Programação------
 #------------------------------------------
-#rafa
+
 #como eu faço para printar algo ?
 
 #No python ultilizamos o print
